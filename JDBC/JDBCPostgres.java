@@ -31,7 +31,7 @@ public class JDBCPostgres {
         Class.forName("org.postgresql.Driver"); // PostgreSQL driver
 
         // Step2 : Conn Establishment (use your Supabase connection string here)
-        String url = "jdbc:postgresql://aws-0-ap-south-1.pooler.supabase.com:6543/postgres?user=postgres.yshxqhzwcekhvudlkaju&password=your_actual_password";
+        String url = "jdbc:postgresql://aws-0-ap-south-1.pooler.supabase.com:6543/postgres?user=postgres.yshxqhzwcekhvudlkaju&password=root";
         Connection con = DriverManager.getConnection(url);
 
         // Step3: Create PreparedStatement
