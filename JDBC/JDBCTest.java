@@ -1,48 +1,54 @@
-import java.sql.DriverManager;
-import java.util.Scanner;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.Scanner;
 
 public class JDBCTest{
-    static final synchronized public void main(String... abc){
+    static final synchronized public void main(String... abc) throws Exception{
 
-          Scanner s = new Scanner(System.in);
+        //Take value from console
+        Scanner s = new Scanner(System.in);
 
-          System.out.print("Enter ID: ");
-          int id = s.nextInt();
+        System.out.print("Enter ID: ");
+        int id = s.nextInt();
 
-          System.out.print("Enter Name: ");
-          String name = s.next();
+        System.out.print("Enter Name: ");
+        String name = s.next();
 
-          System.out.print("Enter Address: ");
-          String address = s.next();
+        s.nextLine();
 
-          System.out.print("Enter Mobile Number: ");
-          long mobile = s.nextLong();
+        System.out.print("Enter Address: ");
+        String address = s.nextLine();
 
-          //JDBC connection!
+        System.out.print("Enter Mobile Number: ");
+        long mobile = s.nextLong();
 
-          //Step1 : Load the Driver
-          Class.forName("com.mysql.jdbc.Driver");
+        //JDBC connection!
 
-          //Step2 : Conn Establishment
-          DriverManager.getConnection("jdbc:mysql://localhost:3306/kgisl_fourth_batch","root","root");
+        //Step0 : Import Packages
+        //Step1 : Load the Driver 
+        // Class.forName("com.mysql.jdbc.Driver"); // outdated!
+        Class.forName("com.mysql.cj.jdbc.Driver"); // Latest!
 
-          //Step3: Create PreparedStatement
-          PreparedStatement ps = ConcurrentHashMap.prepareStatement("insert into student value(?,?,?,?)");
 
-          ps.setInt(1,id);
-          ps.setString(2,name);
-          ps.setString(3,address);
-          ps.setLong(4,mobile);
+        //Step2 : Conn Establishment
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kgisl_fourth_batch","root","killer");
 
-          //Step4: Execute the query
-          int ch = ps.executeUpdate();
+        //Step3: Create PreparedStatement
+        PreparedStatement ps = con.prepareStatement("insert into student value(?,?,?,?)");
 
-          //Step5: Close the resources
-          ps.close();
-          con.close();
+        ps.setInt(1,id);
+        ps.setString(2,name);
+        ps.setString(3,address);
+        ps.setLong(4,mobile);
 
+        //Step4: Execute the query
+        int ch = ps.executeUpdate();
+
+        System.out.println(ch+" rows(s) affected");
+
+        //Step5: Release the resources
+        ps.close();
+        con.close();
     }
 }
