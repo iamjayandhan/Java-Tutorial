@@ -15,17 +15,24 @@
     * DRIVER = org.postgresql.Driver
     * STRING = jdbc:postgresql://aws-0-ap-south-1.pooler.supabase.com:6543/postgres?user=postgres.yshxqhzwcekhvudlkaju&password=😇
     * CMD = java -cp ".;libs\postgresql-42.7.4.jar" File.java
-  
-### SETUP LOCAL FOR ORACLE JAR
-### Set class path for jar if working in local!
+
+---
+
+### SETUP LOCAL FOR ORACLE JAR (College system)
+### 1. Set class path for jar if working in local!
 ```java
     set classpath=;C:\oracle\product\10.2.0\db_1\install\patches\5923165\files\jdbc\lib\ojdbc14.jar  
     echo %classpath%  
 ```
 
-### Get System username of Oracle!
+### 2. Get System username of Oracle!
 ```java
 C:\oracle\product\10.2.0\db_1\network\Admin\tnsnames.ora
 ```
 Search for **tnsnames**, choose second listed with small letters!
-Look for orcl block and copy **Host** name.
+Look for orcl block and copy **Host** name. Use for host name!
+
+```java
+    Connection con = DriverManager.getConnection("jdbc:oracle:thin:@KITEORACLE38191.kgisledu.com:1521/orcl","scott","tiger");
+```
+Like this!

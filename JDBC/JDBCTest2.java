@@ -4,10 +4,10 @@ import java.sql.PreparedStatement;
 import java.util.Scanner;
 
 /*
- * This code works fine on clg PC! We use Java + JDBC + Oracle 
+ * This code works fine on my PC! We use Java + JDBC + Mysql 
 */
 
-public class JDBCTest{
+public class JDBCTest2{
     static final synchronized public void main(String... abc) throws Exception{
 
         //Take value from console
@@ -33,17 +33,17 @@ public class JDBCTest{
         
         //Step1 : Load the Driver 
         // Class.forName("com.mysql.jdbc.Driver"); // outdated!
-        // Class.forName("com.mysql.cj.jdbc.Driver"); // Latest!
-        Class.forName("oracle.jdbc.driver.OracleDriver");
+        Class.forName("com.mysql.cj.jdbc.Driver"); // Latest!
+        // Class.forName("oracle.jdbc.driver.OracleDriver");
 	    System.out.println("Driver Loaded Successfully");
 
         //Step2 : Conn Establishment
-        // Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kgisl_fourth_batch","scott","tiger");
-        Connection con = DriverManager.getConnection("jdbc:oracle:thin:@KITEORACLE38191.kgisledu.com:1521/orcl","scott","tiger");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kgisl_fourth_batch","root","killer");
+        // Connection con = DriverManager.getConnection("jdbc:oracle:thin:@KITEORACLE38191.kgisledu.com:1521/orcl","scott","tiger");
 	    System.out.println("Driver Connection established successfully");
 
         //Step3: Create PreparedStatement
-        PreparedStatement ps = con.prepareStatement("insert into student_jd values(?,?,?,?)");
+        PreparedStatement ps = con.prepareStatement("insert into student values(?,?,?,?)");
 
         ps.setInt(1,id);
         ps.setString(2,name);

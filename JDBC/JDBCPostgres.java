@@ -3,6 +3,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.util.Scanner;
 
+/*
+ * This code works fine on any PC! We use Java + JDBC + Postgres DB from Supabase. 
+*/
+
 public class JDBCPostgres {
     
     static final synchronized public void main(String... abc) throws Exception {
@@ -29,10 +33,13 @@ public class JDBCPostgres {
         // Step0 : Import Packages
         // Step1 : Load the Driver 
         Class.forName("org.postgresql.Driver"); // PostgreSQL driver
+        System.out.println("Driver loaded successfully!");
 
         // Step2 : Conn Establishment (Supabase connection string)
         String url = "jdbc:postgresql://aws-0-ap-south-1.pooler.supabase.com:6543/postgres?user=postgres.yshxqhzwcekhvudlkaju&password=root";
         Connection con = DriverManager.getConnection(url);
+
+        System.out.println("Connection Established!");
 
         // Step3: Create PreparedStatement
         PreparedStatement ps = con.prepareStatement("INSERT INTO student (id, name, address, mobile) VALUES (?, ?, ?, ?)");
