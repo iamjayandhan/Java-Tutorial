@@ -36,3 +36,45 @@ Look for orcl block and copy **Host** name. Use for host name!
     Connection con = DriverManager.getConnection("jdbc:oracle:thin:@KITEORACLE38191.kgisledu.com:1521/orcl","scott","tiger");
 ```
 Like this!
+
+---
+
+### Different Flavors of Editions of Java!
+
+#### 1. **Java SE (Standard Edition)**  
+- **Purpose**: Core Java platform for basic applications.  
+- **What It Includes**: Tools for writing and running Java programs (e.g., JDK, JRE).  
+- **Uses**: Desktop apps, simple server apps, command-line tools.  
+
+#### 2. **GraalVM**  
+- **Purpose**: A powerful runtime supporting Java and other languages (like Python, JavaScript).  
+- **What It Offers**:  
+  - Better performance through advanced compilation.  
+  - Mix Java with other languages easily (polyglot).  
+- **Uses**: Multi-language apps, fast performance apps.  
+
+#### 3. **Java EE (Enterprise Edition)** — Now **Jakarta EE**  
+- **Purpose**: Java for big business apps.  
+- **What It Includes**: APIs for web apps, databases, and messaging.  
+- **Uses**: Scalable enterprise apps, web services, and microservices.  
+
+#### 4. **Java ME (Micro Edition)**  
+- **Purpose**: Java for small, resource-limited devices.  
+- **What It Includes**: Lightweight tools for tiny devices.  
+- **Uses**: Mobile phones, IoT devices, embedded systems.  
+
+#### 5. **JavaFX**  
+- **Purpose**: Build rich graphical apps for desktops and more.  
+- **What It Offers**:  
+  - Modern GUI tools (charts, tables, 3D graphics).  
+  - Multimedia and animations.  
+- **Uses**: Desktop UIs, multimedia apps.  
+
+### Quick Comparison:
+| Edition       | Key Focus                        | Example Uses                     |
+|---------------|----------------------------------|-----------------------------------|
+| **Java SE**   | Core Java platform               | Desktop tools, small apps        |
+| **GraalVM**   | High performance, multi-language | Multi-language apps, faster apps |
+| **Java EE**   | Enterprise-level apps            | Web services, large systems      |
+| **Java ME**   | Small devices                   | Mobile, IoT, embedded systems    |
+| **JavaFX**    | Graphical user interfaces        | Desktop UIs, animations          | 
