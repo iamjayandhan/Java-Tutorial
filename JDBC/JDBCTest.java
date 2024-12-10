@@ -38,9 +38,18 @@ public class JDBCTest{
 	    System.out.println("Driver Loaded Successfully");
 
         //Step2 : Conn Establishment
+
+        //LOCAL MYSQL - College PC
         // Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kgisl_fourth_batch","scott","tiger");
+        
+        //LOCAL ORACLE DB - College PC
         Connection con = DriverManager.getConnection("jdbc:oracle:thin:@KITEORACLE38191.kgisledu.com:1521/orcl","scott","tiger");
-	    System.out.println("Driver Connection established successfully");
+	    
+        //LOCAL ORACLE DB - My Laptop!
+        //this is under observation....!
+        // Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","sys","password");
+        
+        System.out.println("Driver Connection established successfully");
 
         //Step3: Create PreparedStatement
         PreparedStatement ps = con.prepareStatement("insert into student_jd values(?,?,?,?)");
