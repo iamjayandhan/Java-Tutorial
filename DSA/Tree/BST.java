@@ -65,9 +65,10 @@ public class BST{
     }
 
     static int Height(Node head){
-        return 1;
-        //add code here.
-        //mac no of nodes from root to anynode+1
+        if(head==null){
+            return -1;
+        }
+        return 1+(Math.max(Height(head.left), Height(head.right)));
     }
 
     public static void main(String[] args) {
