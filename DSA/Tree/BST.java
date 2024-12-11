@@ -71,6 +71,52 @@ public class BST{
         return 1+(Math.max(Height(head.left), Height(head.right)));
     }
 
+    static int SumTree(Node head){
+        if(head==null){
+            return 0;
+        }
+
+        int sumLeft = SumTree(head.left);
+        int sumRight = SumTree(head.right);
+        return head.data+ sumLeft+ sumRight;
+    }
+
+
+    static void leafNodes(Node head){
+        if(head==null){
+            return;
+        }
+        if(head.left == null && head.right == null){
+            System.out.print(head.data+" ");
+        }
+        leafNodes(head.left);
+        leafNodes(head.right);
+    }
+
+    static void leftView(Node head){
+        if(head==null){
+            return;
+        }
+        System.out.print(head.data + " ");
+        leftView(head.left);
+        if(head.left == null){
+            leftView(head.right);
+        }
+    }
+
+
+    static void rightView(Node head){
+        if(head==null){
+            return;
+        }
+        System.out.print(head.data + " ");
+        rightView(head.right);
+        if(head.left == null){
+            rightView(head.left);
+        }
+    }
+    
+
     public static void main(String[] args) {
         Node node10 = new Node(10);
         Node node7 = new Node(7);
@@ -102,5 +148,24 @@ public class BST{
 
         System.out.print("Height: "+Height(node10));
         System.out.println();
+
+        System.out.print("Sum of Tree: "+SumTree(node10));
+        System.out.println();
+
+        System.out.print("Leaf Nodes of Tree: ");
+        leafNodes(node10);
+        System.out.println();
+
+        System.out.print("Left View of Tree: ");
+        leftView(node10);
+        System.out.println();
+
+        System.out.print("Right View of Tree: ");
+        rightView(node10);
+        System.out.println();
+
+
+
+        
     }
 }

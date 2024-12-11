@@ -57,3 +57,8 @@
 
 1. Size of tree == no of nodes present in that tree.
 2. We get Left,Right and then we return! So Post Order Traversal is the logic.
+
+### Trie Tree Structure
+![](https://media.geeksforgeeks.org/wp-content/uploads/20220828232752/Triedatastructure1.png)
+
+**Real-Time usage:** Auto Suggestions
