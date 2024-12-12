@@ -115,7 +115,9 @@ public class BST{
             rightView(head.left);
         }
     }
-    
+    static Node LCA(Node root){
+        
+    }
 
     public static void main(String[] args) {
         Node node10 = new Node(10);

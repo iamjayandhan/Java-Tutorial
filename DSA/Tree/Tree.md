@@ -59,6 +59,8 @@
 2. We get Left,Right and then we return! So Post Order Traversal is the logic.
 
 ### Trie Tree Structure
-![](https://media.geeksforgeeks.org/wp-content/uploads/20220828232752/Triedatastructure1.png)
+![](https://media.geeksforgeeks.org/wp-cont.ent/uploads/20220828232752/Triedatastructure1.png)
 
 **Real-Time usage:** Auto Suggestions
+
+**Least Common Ancestor:**
