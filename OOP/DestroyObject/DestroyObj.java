@@ -15,6 +15,8 @@ public class DestroyObj{
 
         Obj obj;
 
+        System.out.println();
+
         for(int i=0;i<1000000000;i++){
             obj = new Obj();
         }
