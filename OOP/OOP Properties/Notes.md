@@ -23,33 +23,38 @@
 - PROBLEM HERE IS WHEN THINGS NOT INITIALIZED!
 
 ### Things to be noted!
-1. ```java
+- Case 1 (Only Parent)
+    ```java
     //only parent no issues!
     //parent gets memory
     //ACCESS PARENT CLASS VARS
     Box box = new Box();
     ```
 
-2.  ```java
+- Case 2 (Only Child)
+    ```java
     //only child no issues!
     //child gets memory and using super(), parent also gets memory.
     //ACCESS BOTH CLASS VARS
     BoxWeight box = new BoxWeight();
     ```
 
-3.  ```java
+- Case 3 (Parent ref & child Obj)
+    ```java
     //parent referencing child!
     //Both gets memory, but ref since ref var is of parent type, we can only access parent class vars not the child's vars!
     //This is called upcasting. You cannot directly access the BoxWeight-specific members (like weight) without casting.
     Box box = new BoxWeight();
     ```
 
-4.  ```java
+- Case 4 (Child ref & parent Obj)
+    ```java
     //child referencing parent?
     //A parent (Box) cannot be treated as a child (BoxWeight), as the parent lacks the additional members or behaviors of the child.
     //Compilation Error: "Incompatible types: Box cannot be converted to BoxWeight".
     BoxWeight box = new Box();
     ```
+
 ### Thus! (Check Main.java for fun😂😂😂)
 
 | Code                        | Description & Behavior                                    | Valid?   |
@@ -65,4 +70,16 @@ There are 2 usecases!
 **The thing is:**
 1. ==**Class Object**== is the root of the class hierarchy.
 2. Every class has ==**Object**== as a superclass. 
-3. That is the reason, when u use 'super()' keyword in parent class constructor, we dont get any error!
+3. That is the reason, ==**when u use 'super()' keyword in parent class constructor, we dont get any error!**==
+4. ![alt text](images/image10.png)
+    1. We can use this.w (This is parent class var but accessible. Java first checks current instance and then checks inside parent)
+    2. We can also use super.w (directly checks parent)
+    3. This is mostly helpful when both parent and child has same named var. (we distinguish by 'this' & 'super' keywords!)
+ 5. Super class has no idea about child class! we cant place it below in constructor of child. ==**it should always be placed first!**==
+ 6. Must check copy constructor inside BoxWeight! (MANDATORY)
+   
+### Types of Inheritance
+1. ==**Single Inheritance**== - one class extends another class
+   ![single-inheritance](https://media.geeksforgeeks.org/wp-content/uploads/20220728111827/1-660x329.jpg)
+2. ==**Multi-level Inheritance**== - A <- B(Child of A, Parent of B) <- C.
+   ![Multi-level-inheritance](https://media.geeksforgeeks.org/wp-content/uploads/20220728111913/2-660x329.jpg)
