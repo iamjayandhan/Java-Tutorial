@@ -4,9 +4,9 @@ public class Box{
     double w;
 
     Box(){
-        this.l = -1;
-        this.h = -1;
-        this.w = -1;
+        this.l = 10;
+        this.h = 20;
+        this.w = 30;
     }
 
     //cube
