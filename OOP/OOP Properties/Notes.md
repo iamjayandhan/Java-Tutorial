@@ -61,3 +61,8 @@
 
 ### Super keywork in Detail
 There are 2 usecases!
+
+**The thing is:**
+1. ==**Class Object**== is the root of the class hierarchy.
+2. Every class has ==**Object**== as a superclass. 
+3. That is the reason, when u use 'super()' keyword in parent class constructor, we dont get any error!
