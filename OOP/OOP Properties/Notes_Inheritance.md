@@ -4,7 +4,7 @@
 3. **Encapsulation**
 4. **Abstraction**
 
-### Inheritance
+### 1. Inheritance
 - Child class ==inherits properties and methods from parent== class (base class).
 - =='**extends**'== keyword is used.
 - class child_class **extends** parent_class {}
@@ -79,7 +79,22 @@ There are 2 usecases!
  6. Must check copy constructor inside BoxWeight! (MANDATORY)
    
 ### Types of Inheritance
-1. ==**Single Inheritance**== - one class extends another class
+1. ==**Single Inheritance**== - one class extends another class (NOT ALLOWED IN JAVA)
    ![single-inheritance](https://media.geeksforgeeks.org/wp-content/uploads/20220728111827/1-660x329.jpg)
 2. ==**Multi-level Inheritance**== - A <- B(Child of A, Parent of B) <- C.
-   ![Multi-level-inheritance](https://media.geeksforgeeks.org/wp-content/uploads/20220728111913/2-660x329.jpg)
+   ![multi-level-inheritance](https://media.geeksforgeeks.org/wp-content/uploads/20220728111913/2-660x329.jpg)
+3. ==**Multiple Inheritance**== - One class extending more than one class
+   ![multiple-inheritance](https://media.geeksforgeeks.org/wp-content/uploads/20220728112121/3-660x329.jpg)
+
+    **Problem:**
+    ![alt text](images/image11.png)
+    Here both parents has same var, child gets confused to which one should pick! 
+    So that's why java dont allow this multiple inheritance.
+    **Solution:**
+    Solution to this problem, to replicate this same behaviour we can use Interfaces.
+4. ==**Hierarchical Inheritance**== - one class is inherited by many classes.
+   ![hierarchical-inheritance](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221025185149/Hierarchical-Inheritance-in-Java.jpg)
+5. ==**Hybrid Inheritance**== - Single + Multiple Inheritance (NOT ALLOWED IN JAVA)
+   ![hybrid-inheritance](https://media.geeksforgeeks.org/wp-content/uploads/20220728112142/4-660x330.jpg)
+   **problem:** Multiple inheritance is not allowed!
+   **Solution:** use Interfaces.

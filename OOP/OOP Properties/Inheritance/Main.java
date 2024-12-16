@@ -1,6 +1,3 @@
-
-import javax.xml.transform.OutputKeys;
-
 public class Main{
     public static void main(String[] args) {
         //simple obj
@@ -31,15 +28,18 @@ public class Main{
         //Funny play
         //parent referencing child
         //it is actually the type of ref var, and not the the type of object that determines what members can be accessed!
-        Box box5 = new BoxWeight(8,6,7,9);
+        
+        // Box box5 = new BoxWeight(8,6,7,9);
 
         //my understanding!
         //BoxWeight -> allocated with memory + super() parent also allocated with memory!
         //Box box5 -> ref var that only knows parent class vars!
         //RESULT => memory is allocated for Both, but we can access only parent class vars(because of limitation of ref var)
-        System.out.println(box5.l+" "+box5.h+" "+box5.w+" "+box5.weight);
+        
+        // System.out.println(box5.l+" "+box5.h+" "+box5.w+" "+box5.weight);
     
     
+
         //child referencing parent?
         //You are given access to vars that are in ref type i.e BoxWeight
         //so weight is available...ok....then
@@ -53,6 +53,10 @@ public class Main{
         //😂😂😂
         //box6 is pointing to uninitialized obj & there is no pointer ref for initialized obj(Box).
         //RESULT => COMPILATION ERROR😂😂😂
-        BoxWeight box6 = new Box();
+        
+        // BoxWeight box6 = new Box();
+
+
+        BoxPrice box7 = new BoxPrice(5,8,200);
     }
 }

@@ -18,6 +18,11 @@ public class BoxWeight extends Box{
         other.weight = weight; 
     }
 
+    BoxWeight(double side,double weight){
+        super(side);
+        this.weight = weight;
+    }
+
 
     //what if we pass 4 parameters to child? this below constructor has to handle 4 parameters!
     // weight for itself and remaining h,l,w for parent! how this child constructor pass val to parent constructor?
