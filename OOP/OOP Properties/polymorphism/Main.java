@@ -13,5 +13,12 @@ public class Main {
         Shapes square2 = new Square();
         square2.area(); // uses area() from Square class!
 
+        Shapes obj = new Circle();
+        obj.area();
+
+        //overriding static methods?
+        Shapes obj2 = new Circle();
+        obj2.greet();
+
     }
 }
