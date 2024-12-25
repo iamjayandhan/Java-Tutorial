@@ -5,6 +5,30 @@
 | 1. `javac FileName.java`<br>2. `java FileName`  | `java FileName.java`       | `java -cp ".;C:\path\to\file.jar" FileName.java` |
 |Creates byte code in local storage|Creates byte code in its own memory|Creates byte code in its own memory|
 
+## Rule of thumb😇
+* In general, Java does **not allow** running a .java file directly **if it contains multiple classes** (even if only one of them is public). 
+* The **Java runtime tries** to compile and execute the file in a single step, **but since the file contains multiple classes**, it ==**cannot directly determine the entry point (the main method) or handle other class dependencies correctly.**==
+
+
+
+### **Lets Dive into it!**
+
+1. **Single-Step Execution (`java FileName.java`)**:
+   - This works for simple Java scripts (introduced in Java 11+) with a single file containing a `main` method.
+   - It does ==**not work**== for more complex files that **define multiple classes or depend on other files.**
+
+2. **Two-Step Execution (`javac` + `java`)**:
+   - **First Step (`javac`)**: ==**Compiles**== all classes and creates `.class` files for each.
+   - **Second Step (`java`)**: ==**Runs**== the `main` method of the specified class by referencing the `.class` file.
+
+3. ==**Why Two-Step Execution Is Necessary**== 😇:
+   - Java needs `.class` files to manage the dependencies and structure of the program, especially when multiple classes are involved.
+   - Directly running a `.java` ==**file doesn't allow**== the runtime to handle dependencies or locate auxiliary classes.
+
+### **Enna tha solla vara?**
+- Use **`java FileName.java`** for **simple, single-class programs**.
+- Use **`javac FileName.java`** followed by **`java ClassName`** for **multi-class programs** or more complex setups.
+
 ## Connection strings(Explore more!🥳🥳):
 ### 1. Mysql (My local DB): 
     * DRIVER = com.mysql.cj.jdbc.Driver
