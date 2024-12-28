@@ -39,6 +39,11 @@
     * DRIVER = org.postgresql.Driver
     * STRING = jdbc:postgresql://aws-0-ap-south-1.pooler.supabase.com:6543/postgres?user=postgres.yshxqhzwcekhvudlkaju&password=😇
     * CMD = java -cp ".;libs\postgresql-42.7.4.jar" File.java
+    
+### 3. Microsoft Mysql server 2022 (My local DB):
+    * DRIVER = com.microsoft.sqlserver.jdbc.SQLServerDriver
+    * STRING = Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;
+    * CMD = java -cp ".;libs\mssql-jdbc-12.2.0.jre11.jar" File.java
 
 ---
 
