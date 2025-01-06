@@ -8,3 +8,8 @@
 **example:**
 * There are number of things happens even if we use ==**println()**==, we dont care about internal code for that!
 * **Refer AbstractionExample.java!**
+
+### Abstraction VS Encapsulation
+Abstraction is ***design level***, while encapsulation is ***implementation level***.
+***Ex:*** Run a car -> abstraction (we dont care abt total implementation)
+How it works -> encapsulation (We care abt total implementation)
