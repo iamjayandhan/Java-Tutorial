@@ -36,6 +36,7 @@ does above code ==**makes a,b point to same obj or diff identical objects??**==
     ```
   * Here reference variable is **made to point newly created obj** "**iamjayandhan**". Now the object "**JD**" has **no ref var** pointing! This obj **"JD" now will be garbage collected.**
   * ==**IF WE MODIFY, WE ACTUALLY CREATE NEW STRING OBJ EVERYTIME!**==
+  * first it will check pool, if it is already there then it will reuse. Else it will create a new obj.
 
 ### Why we cant modify string objects?
 ex : consider 5 persons a,b,c,d,e has same name "JD"
