@@ -338,3 +338,38 @@ toString default obj function is overridden by this:
 1. Primitives are stored in stack memory.
 2. Objects are stored in heap.
 
+### String concatenation in java
+**Plus (+)**
+   * can only be used with primitives, or if anyone is them is string.
+   * obj+obj wont work, but obj+""+obj works => makes it a complete string.
+   * operator overloading is **not supported** in java(results in poor code.)
+   * ==**Only operator that is overloading is + in java. To support string concatenation.**==
+
+### String Performance
+```java
+  String series = "";
+  //code creates 25 obj and 26th obj is returned, others are garbage collected.
+  //not efficient code as strings are immutable
+  //memory wastage occurs. so many dereferences.
+
+  //1+2+3.....N
+  //N(N+1)/2 => O(N^2) complexity!
+  for(int i=0;i<26;i++){
+      series += (char)('a'+i);
+  }
+
+  System.out.println(series);
+```
+
+==**What if there is a way to modify strings? any wrapper?**==
+
+### StringBuilder Class
+Only one object is made and changes are applied in that obj only.
+```java
+  StringBuilder series2 = new StringBuilder(); //Obj
+  for(int i=0;i<26;i++){
+      series2.append((char)('a'+i)); //changes are made on one obj only. New are not created everytime!
+  }
+  System.out.println(series2);
+```
+

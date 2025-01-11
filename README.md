@@ -29,6 +29,28 @@
 - Use **`java FileName.java`** for **simple, single-class programs**.
 - Use **`javac FileName.java`** followed by **`java ClassName`** for **multi-class programs** or more complex setups.
 
+### Not sure about the methods in class? No worries(javap on rescue)!
+The ==**javap**== command **lists the methods and constructors** of the class that you specify.
+
+1. **List methods of `String` class:**
+   ```bash
+   javap java.lang.String
+   ```
+2. **List all methods (including private) of `String`:**
+   ```bash
+   javap -private java.lang.String
+   ```
+
+**For your own file?**
+1. **Compile your Java file:**
+   ```bash
+   javac OutputExercise.java
+   ```
+2. **List methods of your own class (`OutputExercise`):**
+   ```bash
+   javap OutputExercise
+   ```
+
 ## Connection strings(Explore more!🥳🥳):
 ### 1. Mysql (My local DB): 
     * DRIVER = com.mysql.cj.jdbc.Driver
