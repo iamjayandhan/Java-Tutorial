@@ -101,4 +101,4 @@ graph TD;
   * The root of the class hierarchy is 'Object' class.
   * Top most class on inheritance.
   * Every class in java internally inherits Object class.
-  * 
+Check **ObjectDemo.java for more information**
