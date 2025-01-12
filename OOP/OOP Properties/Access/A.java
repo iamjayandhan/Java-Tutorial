@@ -1,5 +1,5 @@
 public class A {
-    int num;
+    private int num;
     String name;
     int arr[];
 
@@ -9,5 +9,11 @@ public class A {
         this.arr = new int[num];
     }
 
+    public int getNum(){
+        return num;
+    }
 
+    public void setNum(int num){
+        this.num = num;
+    }
 }
