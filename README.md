@@ -51,6 +51,27 @@ The ==**javap**== command **lists the methods and constructors** of the class th
    javap OutputExercise
    ```
 
+## Understanding Java Packages: (Compile and Run):
+### Why Compile and Run from the Root Directory in Java?
+1. **Packages Require Structure:**
+   * The package statement (e.g., package package1;) ==**tells Java to treat the file as part of a named package.**==
+   * The ==**JVM expects the .class**== file to be inside a folder named after the package (package1).
+2. **JVM Starts at the Root Directory:**
+   * The root directory is where the JVM begins looking for packages.
+   * **If you’re inside package1 and run the program**, the ==**JVM looks for Class1 in the default package (no package), causing an error.**==
+3. **Correct Steps:**
+   * Compile: Use the **root directory** to ensure the .class file is saved with the correct package path.
+   ```java
+   javac package1/Class1.java
+   ```
+   * Run: **Use the root directory to reference the fully qualified class name:**
+   ```java
+   java package1.Class1
+   ```
+
+**Why Not Run Inside the Package Folder?**
+==**Inside package1, you cannot reference package1.Class1 because the JVM doesn’t know it’s in a package.**==
+
 ## Connection strings(Explore more!🥳🥳):
 ### 1. Mysql (My local DB): 
     * DRIVER = com.mysql.cj.jdbc.Driver
