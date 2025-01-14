@@ -35,4 +35,3 @@ An abstract class is a ==**blueprint for other classes**==. It is a ==**class th
   * Cannot have final abstract class.(since it restricts inheritance)
   * Cannot inherit multiple class(Multiple inheritance is not allowed for both normal and abstract classes)
   * Can contain normal method.
-  * 
