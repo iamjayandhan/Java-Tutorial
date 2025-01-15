@@ -1,18 +1,18 @@
-import java.util.ArrayList;
+public class GenericArrayList<T> {
 
-public class CustomArrayList {
+    //https://docs.oracle.com/javase/tutorial/java/generics/restrictions.html
 
-    //only int data!
-    private int data[];
+    //Any user given dtype.
+    private Object data[];
     private static int DEFAULT_SIZE = 10;
     private int size = 0;
 
-    public CustomArrayList(){
-        this.data = new int[DEFAULT_SIZE];
+    public GenericArrayList(){
+        this.data = new Object[DEFAULT_SIZE];
     }
 
     private void resize(){
-        int temp[] = new int[data.length * 2];
+        Object temp[] = new Object[data.length * 2];
         
         //copy current items into the new array
         for(int i=0;i<data.length;i++){
@@ -25,27 +25,27 @@ public class CustomArrayList {
         return size == data.length;
     }
     
-    public void add(int num){
+    public void add(T num){
         if(this.isFull()){
             resize();
         }
         data[size++] = num;
     }
 
-    public int remove(){
-        int removed = data[--size];
+    public T remove(){
+        T removed = (T)(data[--size]);
         return removed;
     }
 
-    public int get(int index){
-        return data[index];
+    public T get(int index){
+        return (T)(data[index]);
     }
 
     public int size(){
         return size;
     }
 
-    public void set(int index, int value){
+    public void set(int index, T value){
         data[index] = value;
     }
 
@@ -65,7 +65,7 @@ public class CustomArrayList {
 
     public static void main(String[] args) {
         // ArrayList list = new ArrayList();
-        CustomArrayList list = new CustomArrayList();
+        GenericArrayList<Integer> list = new GenericArrayList();
         
         for(int i=0;i<15;i++){
             list.add(i+1);
