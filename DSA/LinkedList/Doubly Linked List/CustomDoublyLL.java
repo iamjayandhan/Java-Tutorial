@@ -1,12 +1,14 @@
-public class CustomLinkedList{
+public class CustomDoublyLL{
     
     private class Node{
         private int value;
         private Node next;
+        private Node prev;
 
         public Node(int value){
             this.value = value;
             this.next = null;
+            this.prev = null;
         }
     }
     
@@ -15,18 +17,23 @@ public class CustomLinkedList{
 
     private int size;
 
-    public CustomLinkedList(){
+    public CustomDoublyLL(){
         this.size = 0;
     }
 
     public void insertFirst(int val){
+        if(head == null){
+            Node node = new Node(val);
+            head = node;
+            tail = node;
+            return;
+        }
+
         Node node = new Node(val);
         node.next = head;
+        head.prev = node;
         head = node;
 
-        if(tail == null){
-            tail = head;
-        }
         size++;
     }
 
@@ -37,6 +44,7 @@ public class CustomLinkedList{
         }
         Node node = new Node(val);
         tail.next = node;
+        node.prev = tail;
         tail = node;
         size++;
     }
@@ -63,6 +71,8 @@ public class CustomLinkedList{
 
         node.next = temp.next;
         temp.next = node;
+        node.prev = temp;
+        node.next.prev = node;
         size++;
     }
 
@@ -79,6 +89,7 @@ public class CustomLinkedList{
         }
         int val = head.value;
         head = head.next;
+        head.prev = null;
         size--;
         return val;
     }
@@ -95,25 +106,17 @@ public class CustomLinkedList{
             return val;
         }
 
-        Node temp = head;
-        while(temp.next != tail){
-            temp = temp.next;
-        }
-
-        int val = tail.value;
-
-        tail = temp;
+        int val;
+        val = tail.value;
+        tail = tail.prev;
         tail.next = null;
+
         size--;
         return val;
     }
 
     //returns node at that index!
     public Node get(int index){
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Invalid index: " + index);
-        }
-        
         Node node = head;
         for(int i=0;i<index;i++){
             node = node.next; 
@@ -122,14 +125,14 @@ public class CustomLinkedList{
     }
 
     public int delete(int index){
-        if (index < 0 || index >=size) {
+        if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("Invalid index: " + index);
         }        
         if(index == 0){
             deleteFirst();
             return 0;
         }
-        if(index == size-1){
+        if(index == size){
             deleteLast();
             return 0;
         }
@@ -138,7 +141,13 @@ public class CustomLinkedList{
         Node temp = prev.next;
         
         int val = tail.value;
+
         prev.next = temp.next;
+
+        // prev.next.prev = null;
+        if (prev.next != null) {
+            prev.next.prev = prev;
+        }
         size--;
         return val;
     }
@@ -159,8 +168,17 @@ public class CustomLinkedList{
     public void display(){
         Node temp = head;
         while(temp != null){
-            System.out.print(temp.value+" -> ");
+            System.out.print(temp.value+" <-> ");
             temp = temp.next;
+        }
+        System.out.print("null\n");
+    }
+
+    public void displayReverse(){
+        Node temp = tail;
+        while(temp != null){
+            System.out.print(temp.value+" <-> ");
+            temp = temp.prev;
         }
         System.out.print("null\n");
     }
