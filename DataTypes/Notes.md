@@ -70,3 +70,47 @@ int unwrappedNum = wrappedNum;  // Unboxing (from Integer to int)
 ### **Use Cases**:
 - **`boolean`**: When you need only `true`/`false` values (e.g., flags, conditions).
 - **`Boolean`**: When a value may be `null` (e.g., in databases, API responses).
+
+**Pro Tips**
+
+| **Data Type** | **Size (Bits)** | **Size (Bytes)** | **Range Formula**                          | **Minimum Value**       | **Maximum Value**       |
+|---------------|-----------------|------------------|---------------------------------------------|-------------------------|-------------------------|
+| **byte**      | 8               | 1                | \(-2^{7}\) to \(2^{7} - 1\)                | \(-128\)               | \(127\)                |
+| **short**     | 16              | 2                | \(-2^{15}\) to \(2^{15} - 1\)              | \(-32,768\)            | \(32,767\)             |
+| **int**       | 32              | 4                | \(-2^{31}\) to \(2^{31} - 1\)              | \(-2,147,483,648\)     | \(2,147,483,647\)      |
+| **long**      | 64              | 8                | \(-2^{63}\) to \(2^{63} - 1\)              | \(-9,223,372,036,854,775,808\) | \(9,223,372,036,854,775,807\) |
+| **float**     | 32              | 4                | Approx. ±\(1.4 \times 10^{-45}\) to ±\(3.4 \times 10^{38}\)* | \(-3.4 \times 10^{38}\) | \(3.4 \times 10^{38}\) |
+| **double**    | 64              | 8                | Approx. ±\(4.9 \times 10^{-324}\) to ±\(1.7 \times 10^{308}\)* | \(-1.7 \times 10^{308}\) | \(1.7 \times 10^{308}\) |
+| **boolean**   | 1 (logical)     | (Not precisely defined) | `true` or `false`                       | `false`                | `true`                 |
+| **char**      | 16              | 2                | \(0\) to \(2^{16} - 1\) (Unsigned)         | \(0\)                  | \(65,535\)             |
+
+### **Explanation of the Formulas**
+
+1. **Signed Data Types (byte, short, int, long):**
+   - The formula for the range of signed data types is:
+     \[
+     \text{Range} = \left[-2^{\text{(size in bits - 1)}}, 2^{\text{(size in bits - 1)}} - 1\right]
+     \]
+   - This accounts for both positive and negative numbers, where one bit is reserved for the sign.
+
+2. **Unsigned Data Types (char):**
+   - The formula for the range of unsigned data types is:
+     \[
+     \text{Range} = \left[0, 2^{\text{(size in bits)}} - 1\right]
+     \]
+
+3. **Floating-Point Types (float, double):**
+   - Floating-point types have approximate ranges due to their IEEE 754 representation. They are stored as:
+     - Sign bit
+     - Exponent
+     - Mantissa (fractional part)
+   - Exact precision and range may vary but follow the IEEE 754 standard.
+
+### **Key Notes**
+- **byte** is often used for saving memory in large arrays.
+- **short** is rarely used as `int` is generally preferred.
+- **int** is the default for integer values.
+- **long** is used for very large integers.
+- **float** and **double** are used for fractional numbers, with **double** being more precise.
+- **boolean** only takes `true` or `false`.
+- **char** stores a single 16-bit Unicode character.
