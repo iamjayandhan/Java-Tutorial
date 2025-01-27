@@ -26,7 +26,6 @@ public class Main{
         System.out.println(NormalCar.maxSpeed);
         System.out.println(NormalCar.maxSpeed);
 
-
         RaceCar raceCar = new RaceCar();
         System.out.println(RaceCar.maxSpeed);
     }
