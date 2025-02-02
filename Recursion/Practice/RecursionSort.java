@@ -1,5 +1,7 @@
 import java.util.Arrays;
 
+//hybrid sort(Tim sort) => merge + insertion
+//have a try!
 public class RecursionSort{
 	public static void main(String args[]){
 		// int arr[] = {4,3,2,5,7,1,2,1,9,7,6,1};
@@ -9,9 +11,44 @@ public class RecursionSort{
 		// bubblesort(arr);
 		// selectionSort(arr);
 		// selectionSort2(arr);
-		mergesortInplaceEntry(arr);
+		// mergesortInplaceEntry(arr);
+		quickSort(arr,0,arr.length-1);
 		System.out.println(Arrays.toString(arr));
 		// System.out.println(Arrays.toString(arr));
+	}
+
+	//quick sort
+	public static void quickSort(int arr[], int low,int hi){
+		if(low>=hi){
+			return;
+		}
+
+		int s = low;
+		int e = hi;
+
+		//here mid is pivot!
+		int mid = s+(e-s)/2;
+		int pivot = arr[mid];
+
+		while(s<=e){
+			while(arr[s]<pivot){
+				s++;
+			}
+
+			while(arr[e]>pivot){
+				e--;
+			}
+
+			if(s<=e){
+				int temp = arr[s];
+				arr[s] = arr[e];
+				arr[e] = temp;
+				s++;
+				e--;
+			}
+		}
+		quickSort(arr, low,e);
+		quickSort(arr,s,hi);
 	}
 
 	//merge sort inplace!
