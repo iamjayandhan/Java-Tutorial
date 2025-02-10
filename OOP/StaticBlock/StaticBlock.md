@@ -151,4 +151,30 @@ To summarize the entire process from compilation to execution:
 - **Static block** is executed **only once** when the class is loaded into memory. It’s responsible for initializing static variables or performing other one-time setup tasks.
 - Static variables can be accessed directly in the `main` method because they belong to the class itself, not to any specific object instance.
 - The class initialization happens before any methods (including `main`) are called, ensuring the static block and static variable initialization are performed first.
-- ![alt text](image7.png)
+
+### **Static Block2 file Notes**
+
+1. **Static Blocks Execute When the Class is Loaded**  
+   - A **static block** runs **only once** when the class is first loaded into memory.  
+   - It executes **before any object creation**.  
+
+2. **Static Variables Are Shared Across All Objects**  
+   - The `static` variable (`name`) belongs to the **class**, not individual objects.  
+   - Changes to a `static` variable reflect across **all instances**.  
+
+3. **Constructors Run Every Time an Object is Created**  
+   - While the static block runs **once**, the constructor runs **each time an object is instantiated**.  
+
+4. **Manually Loading a Class Without Object Creation**  
+   - Using `Class.forName("Mobile");` forces the class to load and execute static blocks **without creating an object**.  
+   - Requires exception handling (`ClassNotFoundException`).  
+
+5. **Execution Order**  
+   - **Step 1:** Class loads → **Static block executes** (only once).  
+   - **Step 2:** Object is created → **Constructor executes** (for every object).  
+
+### **Key Takeaways**  
+✔ **Static blocks initialize static variables** and run **only once** when the class is loaded.  
+✔ **Static variables belong to the class**, not objects, and are shared.  
+✔ **Constructors run for every new object** but don’t affect static variables.  
+✔ **`Class.forName()` loads a class into memory manually**, triggering the static block **without object creation**.  
