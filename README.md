@@ -74,6 +74,10 @@ The ==**javap**== command **lists the methods and constructors** of the class th
 ==**Inside package1, you cannot reference package1.Class1 because the JVM doesn’t know it’s in a package.**==
 
 ## **Java Collection Hierarchy**
+1. **Collection (Interface)** => ==**The root interface of the Java Collection Framework, representing a group of objects (List, Set, Queue).**==
+
+2. **Collections (Class)** => ==**A utility class in java.util that provides static methods (e.g., sorting, searching, synchronization) for working with collections.**==
+
 Below is the hierarchical structure of Java's **Collection Framework**:
 ```java
 // Java Collection Framework - Full Interface & Implementation Hierarchy
