@@ -9,10 +9,31 @@ public class RecursionMaze{
 		// System.out.println(res);
 
 		//Diagonal
-		mazeDiagonal("",mat,0,0);
+		// mazeDiagonal("",mat,0,0);
+		// ArrayList<String> res = mazeDiagonalList("",mat,0,0);
+		// System.out.println(res);
+		System.out.println(maze2("",mat,0,0));		
 	}
 
 
+	//Diagonal move? ArrayList!
+	public static ArrayList<String> mazeDiagonalList(String way,int mat[][],int row,int col){
+		if(row>mat.length || col>mat[0].length){
+			return new ArrayList<>();
+		}
+		if(row == mat.length-1 && col == mat[0].length){
+			ArrayList<String> path = new ArrayList<>();
+			path.add(way);
+			return path;
+		}
+
+		ArrayList<String> res = new ArrayList<>();
+		res.addAll(mazeDiagonalList(way+"H", mat, row, col+1));
+		res.addAll(mazeDiagonalList(way+"V", mat, row+1, col));
+		res.addAll(mazeDiagonalList(way+"D", mat, row+1, col+1));
+
+		return res;
+	}
 
 	//Diagonal move? print ways!
 	public static void mazeDiagonal(String way,int arr[][],int row, int col){
