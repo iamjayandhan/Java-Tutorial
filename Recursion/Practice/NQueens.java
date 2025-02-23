@@ -2,7 +2,7 @@ public class NQueens{
 	public static void main(String args[]){
 
 		//make true if a queen is placed!
-		int n = 10;
+		int n = 5;
 		boolean board[][] = new boolean[n][n]; // all are false by default!
 		
         System.out.println("Possible Ways: "+queens(board,0));
