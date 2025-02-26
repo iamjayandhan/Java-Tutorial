@@ -1,4 +1,4 @@
-public class Sudoku{
+public class Sudoku2{
 	public static void main(String args[]){
 
 		//this code works 100% if the given board is solvable!
@@ -28,35 +28,38 @@ public class Sudoku{
 		// 3 6 9 1 4 2 8 7 5 
 		// 2 8 1 5 7 6 4 9 3 
 		// 7 5 4 8 9 3 6 1 2 
-		Solver(board,0,0);
+		if(Solver(board,0,0)){
+			System.out.println("After solving:");
+			display(board);
+		}
+		else{
+			System.out.println("No solution is found, board cannot be solved!");
+		}
 	}
 
-	public static void Solver(int board[][],int row,int col){
+	public static boolean Solver(int board[][],int row,int col){
 		if(row == 9){
-			System.out.println("Board after solving!");
-			display(board);
-			System.out.println("\nYou can cross check the image included in this same directory!");
-
-			return;
+			return true;
 		}
 		if(col == 9){
-			Solver(board, row+1, 0);
-			return;
+			return Solver(board, row+1, 0);
 		}
 
 		if(board[row][col] == 0){
 			for(int num=1;num<10;num++){
 				if(isSafe(board,row,col,num)){
 					board[row][col] = num;
-					Solver(board,row,col+1);
+					if(Solver(board,row,col+1)){
+						return true;
+					}
 					board[row][col] = 0;
 				}
 			}
+			return false; //no valid number is found, so trigger backtracking!
 		}
 		else{
-			Solver(board,row,col+1);
+			return Solver(board,row,col+1);
 		}
-		return;
 	}
 
 	public static boolean isSafe(int board[][], int row, int col,int num){
