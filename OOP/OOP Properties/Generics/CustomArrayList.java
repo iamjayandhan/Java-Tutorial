@@ -2,13 +2,17 @@ import java.util.ArrayList;
 
 public class CustomArrayList {
 
+    //This custom Array List code is hardcoded only for integers!
+    //so this code does not intake any generics! '<>'
+    //works only for int datatype!
+
     //only int data!
     private int data[];
     private static int DEFAULT_SIZE = 10;
     private int size = 0;
 
     public CustomArrayList(){
-        this.data = new int[DEFAULT_SIZE];
+        this.data = new int[DEFAULT_SIZE]; //Initialize with default size!
     }
 
     private void resize(){
@@ -66,6 +70,10 @@ public class CustomArrayList {
     public static void main(String[] args) {
         // ArrayList list = new ArrayList();
         CustomArrayList list = new CustomArrayList();
+
+        //wrong
+        // CustomArrayList<String>  list2 = new CustomArrayList<String>();
+        // Error: The type CustomArrayList is not generic; it cannot be parameterized with arguments 
         
         for(int i=0;i<15;i++){
             list.add(i+1);
