@@ -79,7 +79,7 @@
 8. **final vars must be initialized!**
 9. ![declare refName as final](images/image-4.png) 
    **This makes refName point to same obj(We can modify values of that OBJ).
-   But cannot reassign that refName to another new OBJ**!
+   But cannot reassign that refName to another new OBJ**! 
 10. In Java, Garbage collection is done automatically.
    User is not allowed to destory any obj but allowed to perform
    some actions while destroying OBJ! We use finalizer called finalize method!
@@ -87,6 +87,22 @@
    Java calls this method during Garbage collection process...
    ![alt text](images/image-5.png)
 
+### Conclusion
+**Primitive wrappers(Immutable wrappers)** are declared as Final in their implementation! so even they are considered as objects, when passed as param in function, **java will create a copy!** so SWAPPING of two numbers via a function using primitive or primitive wrappers is impossible! hence swapping is impossible!
+
+if a obj has final, we can change the content of obj, but cannot reassign the obj to any other ref var.
+
+
+```
+final Student stu = new student();
+stu.name = "any name" // this is possible
+
+// but
+stu = new Student(); // this is not possible!
+```
+
+
+**Possible ways** => using array(Mutable wrapper) or Object(class's obj)
 
 ### Packages
 - Packages are like containers for classes.
