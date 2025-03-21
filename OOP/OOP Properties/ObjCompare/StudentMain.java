@@ -9,7 +9,16 @@ public class StudentMain{
 		Student arr[] = {JD,Killer};
 		//before
 		System.out.println(Arrays.toString(arr));
-		Arrays.sort(arr); // this sorting is based on marks obtained! but why? 
+
+		// Arrays.sort(arr); // this sorting is based on marks obtained! but why? 
+
+		//here compareTo must be overridden right?
+		//we did it based on marks!
+		//so sorting is also based on the marks of the students.
+		//if we remove it, we get error! on what param of obj do i need to compare those?
+		//to make sort() to take compareTo to perform sorting, we can pass a comparator for custom sorting of objects
+		Arrays.sort();
+
 		System.out.println(Arrays.toString(arr));
 
 		if(JD.compareTo(Killer) < 0){

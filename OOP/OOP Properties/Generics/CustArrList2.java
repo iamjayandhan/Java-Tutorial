@@ -15,6 +15,7 @@ public class CustArrList2<T> {
         if(isFull()){
             resize();
         }
+        //Object> T (no issues, no need for casting)
         data[size++] = num; 
     } 
 
@@ -39,19 +40,19 @@ public class CustArrList2<T> {
         // }
 
         //T < Object
-        T removed = ()data[--size];
+        T removed = (T)data[--size];
         return removed;
     }
 
-    public int get(int index){
-        return data[index];
+    public T get(int index){
+        return (T)data[index];
     }
-
+ 
     public int size(){
         return size;
     }
 
-    public void set(int index, int element){
+    public void set(int index, T element){
         data[index] = element;
     }
 
@@ -64,15 +65,15 @@ public class CustArrList2<T> {
 
     public static void main(String[] args) {
         // ArrayList list = new ArrayList<>();
-        CustArrList2 list = new CustArrList2();
+        CustArrList2<String> list = new CustArrList2<>();
 
         // list.add(3);
         // list.add(5);
         // list.add(7);
         for(int i=0;i<=10;i++){
-            list.add(i+1);
+            list.add("Roll"+i+"s");
         }
         System.out.println(list);
-
+        
     }
 }
