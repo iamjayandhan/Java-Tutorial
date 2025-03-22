@@ -22,6 +22,8 @@ Here,
 
 ### **Checked vs. Unchecked Exceptions in Java**
 
+
+
 #### **Checked Exceptions**
 - Checked exceptions are exceptions that are **checked at compile time**.
 - The compiler enforces handling these exceptions using `try-catch` or by declaring them with `throws` in the method signature.
