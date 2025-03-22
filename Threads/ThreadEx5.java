@@ -51,7 +51,7 @@ public class ThreadEx5{
 		//make a wait till both threads complete the task!
 		//makes main thread to wait for t1,t2 threads!
 		try{
-			t1.join();
+			t1.join(); //ask main thread to wait for this threads to terminate!
 			t2.join();
 		}
 		catch(InterruptedException e){

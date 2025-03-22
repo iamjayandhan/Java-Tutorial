@@ -2,13 +2,18 @@
 //Thread class internally implements Runnable Interface
 //Runnable Interface has the method 'run()'
 
+//our class -> extends -> Thread class -> implements -> Runnable Interface!
+
 class A extends Thread{ //this is a thread!
 	public void run(){
 		for(int i=1;i<=5;i++){
 			System.out.println("Hi");
 			try {
 				Thread.sleep(10); //waiting stage! in milli seconds
-			} catch (InterruptedException e) { e.printStackTrace();}
+			} 
+			//sleeping thread sometimes waken up by another thread!
+			//this causes exception!
+			catch (InterruptedException e) { e.printStackTrace();}
 		}
 	}
 }

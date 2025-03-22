@@ -36,8 +36,8 @@ public class ThreadsEx{
 		//based on allocated time for a thread, it will exec code!
 
 		//EXTRA CODE! (to find tot number of threads the code uses and tot cores present in CPU)!
-		// System.out.println(Thread.activeCount());
-		// int cores = Runtime.getRuntime().availableProcessors();
-        // System.out.println("Available Cores/Threads: " + cores);
+		System.out.println(Thread.activeCount());
+		int cores = Runtime.getRuntime().availableProcessors();
+        System.out.println("Available Cores/Threads: " + cores);
 	}
 }
