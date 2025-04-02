@@ -30,6 +30,12 @@
 - Use **`javac FileName.java`** followed by **`java ClassName`** for **multi-class programs** or more complex setups.
 - Number of class files == number of class present in the file (No matter wheather it is seperate or nested class!)
 
+### Too many import statements?
+replace those with this single line!
+```java
+   import module java.base.*;
+```
+
 ### Not sure about the methods in class? No worries(javap on rescue)!
 The ==**javap**== command **lists the methods and constructors** of the class that you specify.
 
