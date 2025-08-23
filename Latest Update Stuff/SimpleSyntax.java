@@ -1,3 +1,3 @@
-void main(){
-	System.out.println("Hello killer");
-}
+//void main(){
+//	System.out.println("Hello killer");
+//}
