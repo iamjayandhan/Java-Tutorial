@@ -38,6 +38,7 @@ public class UniquePathsGrid {
         else if(i> grid.length-1 || j> grid[0].length-1 || grid[i][j] == 1){
             return 0;
         }
+        
         //right + down possbilities
         return countUniquePaths(grid, i, j+1) + countUniquePaths(grid, i+1, j);
     }
