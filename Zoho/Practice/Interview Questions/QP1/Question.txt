@@ -1,0 +1,47 @@
+Round 1: Coding Questions
+
+* Total: 5 Questions
+* Format:
+  • First Hour: 2 problems were given. Candidates who didn’t solve both were eliminated.
+  • Next 1.5 Hours: 3 more questions for the shortlisted candidates.
+
+Questions:
+
+1. Pattern Printing
+         1
+      2 1 2
+   3 2 1 2 3
+
+2. Find Base of a Number
+   Example:
+   Input: Number = 13, Base = 3
+   Output: 111
+
+3. Find the Longest Word in a String
+
+4. Find the Nearest Number in a Sorted Array (Binary Search)
+
+5. Difference Between Two Dates
+   Example:
+   From: 25-08-2025
+   To:   26-08-2025
+   Output: 0 years, 0 months, 1 days
+
+Round 2: System Design
+
+* Task: Cab Management System
+* Note: No code required, only an efficient design/approach.
+
+Round 3: Technical + HR
+
+* Tasks and Questions:
+  • Pattern Printing (without conditional statements, using only 2 loops and no array)
+  1234
+  4123
+  3412
+  2341
+  • Aptitude questions on Percentage and Profit & Loss
+  • Discussion about Project
+
+
+@zoho madurai,this was shared in another zoho group.
