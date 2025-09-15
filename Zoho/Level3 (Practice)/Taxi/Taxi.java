@@ -7,6 +7,9 @@ class Taxi {
     private int totalEarnings;
     private List<Booking> bookings;
 
+
+    // int id, char currentPoint, int freetime, totalearnings, bookings
+
     public Taxi(int id) {
         this.id = id;
         this.currentPoint = 'A';

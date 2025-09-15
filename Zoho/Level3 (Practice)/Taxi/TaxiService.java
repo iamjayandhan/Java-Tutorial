@@ -83,6 +83,7 @@ class TaxiService {
         System.out.printf("Booking Confirmed → Taxi-%d allotted to Customer-%d (%c → %c, Pickup: %d, Drop: %d, Fare: Rs.%d)%n%n",
                 taxi.getId(), customerId, from, to, pickupTime, dropTime, amount);
 
+
     }
 
      public void displayDetails() {

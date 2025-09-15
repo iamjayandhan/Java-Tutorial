@@ -1,6 +1,6 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Arrays;
+import java.util.List;
 
 public class Pattern {
     public static void main(String[] args) {
@@ -34,6 +34,7 @@ public class Pattern {
 
         for(int i=0;i<tc.length();i++){
             for(int j=0;j<tc.length();j++){
+                //only the center!
                 if(i==j && i == n/2){
                     System.out.print(tc.charAt(mid)+" ");
                     d1++;
@@ -41,22 +42,27 @@ public class Pattern {
                     T++;
                     L++;
                 }
+                // only diagonal left to right
                 else if(i==j){
                     System.out.print(tc.charAt(d1)+" ");
                     d1++;
                 }
+                // only the diagonal right to left
                 else if (i+j == n-1) {
                     System.out.print(tc.charAt(d2)+" ");
                     d2++;
                 }
+                //mid line left to right
                 else if(i == mid){
                     System.out.print(tc.charAt(L)+" ");
                     L++;
                 }
+                //mid line from top to bottom
                 else if(j == mid){
                     System.out.print(tc.charAt(T)+" ");
                     T++;
                 }
+                //if any other? just space!
                 else{
                     System.out.print("  ");
                 }
