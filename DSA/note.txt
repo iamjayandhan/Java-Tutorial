@@ -1,0 +1,9 @@
+What is a data structure?
+
+A named location that can be used to store and organize data.
+eg. Array
+A collection of element stored at contiguous memory locations.
+
+What is an Algorithm? 
+A collection of steps to solve a problem
+
