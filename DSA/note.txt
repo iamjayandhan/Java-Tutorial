@@ -5,5 +5,4 @@ eg. Array
 A collection of element stored at contiguous memory locations.
 
 What is an Algorithm? 
-A collection of steps to solve a problem
-
+A collection of steps to solve a problem.
